@@ -10,7 +10,9 @@ type UserStore interface {
 
 type ProductStore interface {
 	GetProducts() ([]Product, error)
+	GetProductsByID(ps []int) ([]Product, error)
 	CreateProduct(Product) error
+	UpdateProduct(Product) error
 }
 
 type OrderStore interface {
@@ -73,4 +75,13 @@ type CreateProductPayload struct {
 type LoginUserPayload struct {
 	Email    string `json:"email" validate:"required,email"`
 	Password string `json:"password" validate:"required"`
+}
+
+type CartItem struct {
+	ProductID int `json:"productID"`
+	Quantity  int `json:"quantity"`
+}
+
+type CartCheckoutPayload struct {
+	Items []CartItem `json:"items" validate:required`
 }

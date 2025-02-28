@@ -31,7 +31,7 @@ func initConfig() Config {
 		DBAddress:             fmt.Sprintf("%s:%s", getEnv("DB_HOST", "127.0.0.1"), getEnv("DB_PORT", "3306")),
 		DBName:                getEnv("DB_NAME", "madebyriki"),
 		JWTExpirationInSecond: getEnvAsInt("JWT_EXP", 3600*24*7),
-		JWTSecret:             getEnv("JWT_SECRET", "425470b99d8bfcb528ced35043e5e49c438dba2dea9851202234798ee1d640ae"),
+		JWTSecret:             getEnv("JWT_SECRET", "rahasia-donk"),
 	}
 }
 
